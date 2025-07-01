@@ -1,7 +1,7 @@
 package day02;
 
-public class 실습1 {
-    public static void main(String[] args) {
+public class 실습1 { //시작
+    public static void main(String[] args) { // main 시작
 //[실습1] * 제출용
         //    문제 1: 리터럴(Literal)과 기본 출력 함수
 //    지시: System.out.println() 함수를 사용해서 숫자 25와 문자열 "홍길동"을 각각 다른 줄에 출력 하시오.
@@ -65,6 +65,6 @@ public class 실습1 {
         String content = "안녕하세요!";
         System.out.printf( "========방문록======== \n 번호    작성자    방문록 \n %d      %s    %S \n ====================" , num , writer , content );
     } //main 끝
-} //
+} // class 끝
 
 //초기화란? 변수 선언과 동시에 값 대입
