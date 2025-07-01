@@ -62,7 +62,7 @@ public class 실습2 {
         System.out.print( "게시물 번호: " );
         int ex4_1 = scan.nextInt();
         System.out.print( "제목: " );
-        scan.nextLine();
+        scan.nextLine();                //앞에 next 있어서 무의미한 nextLine 넣음
         String ex4_2 = scan.nextLine();
         System.out.print( "내용: " );
         String ex4_3 = scan.nextLine();
