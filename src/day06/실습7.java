@@ -1,5 +1,8 @@
 package day06;
 
+import java.awt.*;
+import java.util.Scanner;
+
 // === 1) .java 파일내 여러개 클래스 선언 === //
 class Book {
     String title; //멤버변수
@@ -11,72 +14,115 @@ public class 실습7 {
     public static void main(String[] args) {
         // * 자바에서 객체 생성하기 위해서는 *클래스* 필요하다.
         // 1) .java (실습7) 파일내 여러개 클래스 선언 ( 비권장 )
-        Book b1 = new Book(); // (2) 객체 생성 한다. , new 클래스명();
-        Book b2 = new Book(); // 주로 생성된 객체는 변수에 저장한다. , 클래스명 변수명 = new 클래스명();
-        b1.title ="이것이 자바다"; // (3) "이것이 자바다", "신용권", 30000 값들을 멤버변수에 대입
-        b1.author = "신용권";
-        b1.price = 30000;
-        b2.title = "자바의 정석"; // (3) "자바의 정석", "남궁성", 28000 값들을 멤버변수에 대입
-        b2.author = "남궁성";
-        b2.price = 28000;
-        System.out.println( b1.title +"\t" + b1.author + "\t" + b1.price );// (4) 두 객체의 모든 정보를 각각 출력하세요.
-        System.out.println( b2.title +"\t" + b2.author + "\t" + b2.price );
+//        Book b1 = new Book(); // (2) 객체 생성 한다. , new 클래스명();
+//        Book b2 = new Book(); // 주로 생성된 객체는 변수에 저장한다. , 클래스명 변수명 = new 클래스명();
+//        b1.title ="이것이 자바다"; // (3) "이것이 자바다", "신용권", 30000 값들을 멤버변수에 대입
+//        b1.author = "신용권";
+//        b1.price = 30000;
+//        b2.title = "자바의 정석"; // (3) "자바의 정석", "남궁성", 28000 값들을 멤버변수에 대입
+//        b2.author = "남궁성";
+//        b2.price = 28000;
+//        System.out.println( b1.title +"\t" + b1.author + "\t" + b1.price );// (4) 두 객체의 모든 정보를 각각 출력하세요.
+//        System.out.println( b2.title +"\t" + b2.author + "\t" + b2.price );
+//
+//        // 2) 새로운 .java 파일 생성하여 클래스 선언 (권장)
+//        Pet p1 = new Pet(); // (2) 객체 생성한다.
+//        Pet p2 = new Pet(); // 클래스명 변수명 = new 클래스명();
+//        p1.name = "초코"; p1.species = "푸들";        p1.age = 3; // (3) 첫 번째 객체에는 "초코", "푸들", 3
+//        p2.name = "나비"; p2.species = "코리안숏헤어";  p2.age = 5;// (3) 두 번째 객체에는 "나비", "코리안숏헤어", 5
+//        // (4) "이름: [이름], 종류: [품종], 나이: [나이]살" 형식 출력
+//        System.out.printf("이름 : %s , 종류 : %s , 나이 : %d살 \n" ,
+//                p1.name , p1.species , p1.age );
+//        System.out.printf("이름 : %s , 종류 : %s , 나이 : %d살 \n" ,
+//                p2.name , p2.species , p2.age );
+//
+//        // 문제3
+//        Rectangle rect = new Rectangle(); // 객체 생성
+//        rect.width = 10;  rect.height = 5; // 객체내 멤버변수에 값 대입
+//        System.out.printf("사각형의 넓이 : %d \n" , rect.width * rect.height );
+//        // 문제4
+//        BankAccount account = new BankAccount();  // BankAccount 객체를 하나 생성
+//        account.accountNumber = "111-222-3333";// 계좌번호는 "111-222-3333",
+//        account.ownerName = "유재석"; // 예금주는 "유재석",
+//        account.balance = 10000; // 초기 잔액은 10000으로 저장하세요.
+//        account.balance += 5000; // balance에 5000을 더하여 입금 상황을 구현하고,
+//        System.out.printf("입금 후 잔액 : %d \n" , account.balance ); // "입금 후 잔액: [잔액]"을 출력하세요.
+//        account.balance -= 3000; // 다시 balance에서 3000을 빼서 출금 상황을 구현하고,
+//        System.out.printf("출금 후 잔액 : %d \n" , account.balance );// "출금 후 잔액: [잔액]"을 출력하세요.
+//        // 문제5
+//        Product prod1 = new Product(); // Product 객체 2개를 생성하고,
+//        Product prod2 = new Product();
+//        prod1.name = "새우깡"; prod1.price = 1500; // 각각 "새우깡", 1500과
+//        prod2.name = "콜라";  prod2.price = 2000; // "콜라", 2000 정보를 저장하세요.
+//        if( prod1.price > prod2.price ) {// 2. if문을 사용하여 두 객체의 price를 비교하고, 더 비싼 상품의 이름을 출력하세요.
+//            System.out.printf( prod1.name );
+//        }else{    System.out.printf( prod2.name );  }
+//
+//        // [문제 6]
+//        Member m1 = new Member();
+//        m1.id ="admin";     m1.isLogin = false;
+//        System.out.println("로그인 전 상태 : " + m1.isLogin );
+//        m1.isLogin = true;
+//        System.out.println("로그인 후 상태 : " + m1.isLogin );
+//
+//        // [문제 7]
+//        Television t1 = new Television();
+//        t1.channel = 7;     t1.volume = 20;
+//        t1.channel = 11;    t1.volume -= 2;
+//        System.out.println("채널 : " + t1.channel );
+//        System.out.println("볼륨 : " + t1.volume );
+//
+//        // [문제 8]
+//        Player play1 = new Player();
+//        Player play2 = new Player();
+//        play1.name ="손흥민"; play1.power = 90; play1.speed = 95;
+//        play2.name ="이강인"; play2.power = 85; play2.speed = 92;
+//        if( ( play1.power + play1.speed ) > ( play2.power + play2.speed ) ){
+//            System.out.println( play1.name );
+//        }else{  System.out.println( play2.name );  }
 
-        // 2) 새로운 .java 파일 생성하여 클래스 선언 (권장)
-        Pet p1 = new Pet(); // (2) 객체 생성한다.
-        Pet p2 = new Pet(); // 클래스명 변수명 = new 클래스명();
-        p1.name = "초코"; p1.species = "푸들";        p1.age = 3; // (3) 첫 번째 객체에는 "초코", "푸들", 3
-        p2.name = "나비"; p2.species = "코리안숏헤어";  p2.age = 5;// (3) 두 번째 객체에는 "나비", "코리안숏헤어", 5
-        // (4) "이름: [이름], 종류: [품종], 나이: [나이]살" 형식 출력
-        System.out.printf("이름 : %s , 종류 : %s , 나이 : %d살 \n" ,
-                p1.name , p1.species , p1.age );
-        System.out.printf("이름 : %s , 종류 : %s , 나이 : %d살 \n" ,
-                p2.name , p2.species , p2.age );
+//[문제 9] MenuItem 클래스를 만드세요. name(문자열), price(정수), isSignature(boolean, 대표메뉴 여부) 멤버 변수를 가집니다.
+//1. main 함수에서 MenuItem 객체 3개를 생성하고, 첫 번째는 "김치찌개", 8000, true, 두 번째는 "된장찌개", 8000, false, 세 번째는 "계란찜", 3000, false로 저장하세요.
+//2. if문을 사용하여 isSignature가 true인 메뉴 객체를 찾아, "[대표메뉴] [메뉴이름] : [가격]원" 형식으로 출력하세요.
+        //MenuItem 객체 3개 생성
+//        MenuItem menu1 = new MenuItem();
+//        MenuItem menu2 = new MenuItem();
+//        MenuItem menu3 = new MenuItem();
+//        //저장
+//        menu1.name = "김치찌개"; menu1.price = 8000; menu1.isSignature = true;
+//        menu2.name = "된장찌개"; menu2.price = 8000; menu2.isSignature = false;
+//        menu3.name = "계란찜"; menu3.price = 3000; menu3.isSignature = false;
+//        //if문 사용 -> isSignature true 찾기
+//        if(menu1.isSignature == true ){
+//            System.out.printf( "[대표메뉴] [%s] : [%d]원" , menu1.name , menu1.price );
+//        }else if(menu2.isSignature == true ){
+//            System.out.printf( "[대표메뉴] [%s] : [%d]원" , menu1.name , menu1.price );
+//        }else if(menu3.isSignature == true ){
+//            System.out.printf( "[대표메뉴] [%s] : [%d]원" , menu1.name , menu1.price );
+//        }
 
-        // 문제3
-        Rectangle rect = new Rectangle(); // 객체 생성
-        rect.width = 10;  rect.height = 5; // 객체내 멤버변수에 값 대입
-        System.out.printf("사각형의 넓이 : %d \n" , rect.width * rect.height );
-        // 문제4
-        BankAccount account = new BankAccount();  // BankAccount 객체를 하나 생성
-        account.accountNumber = "111-222-3333";// 계좌번호는 "111-222-3333",
-        account.ownerName = "유재석"; // 예금주는 "유재석",
-        account.balance = 10000; // 초기 잔액은 10000으로 저장하세요.
-        account.balance += 5000; // balance에 5000을 더하여 입금 상황을 구현하고,
-        System.out.printf("입금 후 잔액 : %d \n" , account.balance ); // "입금 후 잔액: [잔액]"을 출력하세요.
-        account.balance -= 3000; // 다시 balance에서 3000을 빼서 출금 상황을 구현하고,
-        System.out.printf("출금 후 잔액 : %d \n" , account.balance );// "출금 후 잔액: [잔액]"을 출력하세요.
-        // 문제5
-        Product prod1 = new Product(); // Product 객체 2개를 생성하고,
-        Product prod2 = new Product();
-        prod1.name = "새우깡"; prod1.price = 1500; // 각각 "새우깡", 1500과
-        prod2.name = "콜라";  prod2.price = 2000; // "콜라", 2000 정보를 저장하세요.
-        if( prod1.price > prod2.price ) {// 2. if문을 사용하여 두 객체의 price를 비교하고, 더 비싼 상품의 이름을 출력하세요.
-            System.out.printf( prod1.name );
-        }else{    System.out.printf( prod2.name );  }
 
-        // [문제 6]
-        Member m1 = new Member();
-        m1.id ="admin";     m1.isLogin = false;
-        System.out.println("로그인 전 상태 : " + m1.isLogin );
-        m1.isLogin = true;
-        System.out.println("로그인 후 상태 : " + m1.isLogin );
 
-        // [문제 7]
-        Television t1 = new Television();
-        t1.channel = 7;     t1.volume = 20;
-        t1.channel = 11;    t1.volume -= 2;
-        System.out.println("채널 : " + t1.channel );
-        System.out.println("볼륨 : " + t1.volume );
-
-        // [문제 8]
-        Player play1 = new Player();
-        Player play2 = new Player();
-        play1.name ="손흥민"; play1.power = 90; play1.speed = 95;
-        play2.name ="이강인"; play2.power = 85; play2.speed = 92;
-        if( ( play1.power + play1.speed ) > ( play2.power + play2.speed ) ){
-            System.out.println( play1.name );
-        }else{  System.out.println( play2.name );  }
+//
+//[문제 10] UserProfile 클래스를 만드세요. name(문자열), age(정수), mbti(문자열) 멤버 변수를 가집니다.
+//1. main 함수에서 UserProfile 객체를 하나 생성하세요.
+//2. Scanner를 사용하여 사용자로부터 이름, 나이, MBTI를 순서대로 입력받으세요.
+//3. 입력받은 값들을 생성된 객체의 각 멤버 변수에 저장하세요.
+//4. 모든 정보가 저장된 객체의 멤버 변수들을 가져와 "--- 프로필 ---", "이름: [이름]", "나이: [나이]", "MBTI: [MBTI]" 형식으로 출력하세요.
+        // UserProfile 객체 생성
+        UserProfile user = new UserProfile();
+        // Scanner 입력
+        Scanner scan = new Scanner( System.in );
+        System.out.print( "이름 : " );
+        String name = scan.next();
+        System.out.print( "나이 : " );
+        int age = scan.nextInt();
+        System.out.print( "MBTI : " );
+        String mbti = scan.next();
+        // 변수 저장
+        user.name = name; user.age = age; user.mbti = mbti;
+        // 출력
+        System.out.printf("---프로필---, 이름: [%s] , 나이: [%d] , MBTI: [%s]" , user.name , user.age , user.mbti );
 
 
 
