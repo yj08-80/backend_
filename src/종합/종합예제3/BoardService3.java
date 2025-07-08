@@ -1,10 +1,9 @@
-package 종합.예제3; // 패키지 명
+package 종합.종합예제3; // 패키지 명
 
 import java.util.Scanner;
 
 public class BoardService3 { // 클래스 시작
     public static void main(String[] args) { // main함수 시작
-
         // (5)
         // boardService1_변수활용 : 게시물3개 --> 변수6개 , 게시물100개 --> 변수 200개
         // boardService2_배열활용 : 게시물100개 -> 변수2개
