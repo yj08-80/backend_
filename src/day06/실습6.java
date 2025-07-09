@@ -167,10 +167,17 @@ public class 실습6 { // class start
         int[] usageMinutes = {65, 30, 140, 420};
         // 배열 순회
         for( int i = 0 ; i <= carNumbers.length-1 ; i++ ){
-            System.out.println( carNumbers[i] + ":" + usageMinutes[i] + "분 주차," );
+            System.out.print( carNumbers[i] + ":" );
+            System.out.print( + usageMinutes[i] + "분 주차," );
             if( usageMinutes[i] > 30 ){
                 int money = (usageMinutes[i] - 30)/10*500 + 1000;
-                System.out.print( "최종 요금:" + money + "원" );
+                if( money > 20000 ){
+                    money = 20000;
+                }
+                System.out.println( "최종 요금:" + money + "원" );
+            }else{
+                int money = 1000;
+                System.out.println( "최종 요금:" + money + "원" );
             }
         }
     } // main end
