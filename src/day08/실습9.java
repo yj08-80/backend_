@@ -1,5 +1,7 @@
 package day08;
 
+import java.util.Scanner;
+
 public class 실습9 { // class start
     public static void main(String[] args) { // main start
 //[JAVA] 실습9 : 클래스와 객체의생성자
@@ -65,25 +67,63 @@ public class 실습9 { // class start
 //        1. Member 클래스에 기본 생성자를 만들고, 이 생성자 안에서 id는 "guest", isLogin은 false로 초기화되도록 하세요.
 //        2. main 함수에서 new Member()로 객체를 생성하고, 초기화된 id와 isLogin 값을 출력하여 확인하세요.
         Member member = new Member();
-        System.out.printf( "%s,%b", member.id, member.isLogin );
+        System.out.printf( "%s,%b \n", member.id, member.isLogin );
 
 //[문제 7] Television 클래스를 만드세요. (channel, volume 멤버 변수) *멤버변수의 타입은 적절하게 선택하시오.
 //        1. channel과 volume을 매개변수로 받아 초기화하는 생성자를 만드세요.
-//        2. main 함수에서 (채널 7, 볼륨 20) 상태를 가진 Television 객체를 생성하고, 해당 객체의 정보를 출력하세요.
+//        2. main 함수에서 (채널 7, 볼륨 20) 상태를 가진 Television 객체를 생성하고,
+//        해당 객체의 정보를 출력하세요.
 //
+         // (채널 7, 볼륨 20) 상태를 가진 Television 객체
+        Television television = new Television( 7 , 20 );
+        // 출력
+        System.out.printf( "%d,%d \n" , television.channel , television.volume );
+
+
 //[문제 8] Player 클래스를 만드세요. (name, power, speed 멤버 변수) *멤버변수의 타입은 적절하게 선택하시오.
 //        1. 세 멤버 변수를 모두 초기화하는 생성자를 만드세요.
-//        2. main 함수에서 이 생성자를 사용하여, ("손흥민", 90, 95) 정보를 가진 객체와 ("이강인", 85, 92) 정보를 가진 객체를 생성하세요.
+//        2. main 함수에서 이 생성자를 사용하여,
+//        ("손흥민", 90, 95) 정보를 가진 객체와 ("이강인", 85, 92) 정보를 가진 객체를 생성하세요.
 //        3. 두 객체의 정보를 각각 출력하여 확인하세요.
+        // 객체를 생성
+        Player player = new Player( "손흥민", 90, 95 );
+        Player player1 = new Player( "이강인", 85, 92 );
+        // 각각 출력
+        System.out.printf( "%s , %d , %d \n" , player.name , player.power , player.speed );
+        System.out.printf( "%s , %d , %d \n" , player1.name , player1.power , player1.speed);
 //
-//            [문제 9] MenuItem 클래스를 만드세요. (name, price, isSignature 멤버 변수) *멤버변수의 타입은 적절하게 선택하시오.
-//            1. 세 멤버 변수를 모두 초기화하는 생성자를 만드세요.
-//2. main 함수에서 이 생성자를 사용하여 "김치찌개", 8000, true 정보를 가진 객체를 생성하고, isSignature가 true인지 확인한 후 "[대표메뉴] 김치찌개 : 8000원" 형식으로 출력하세요.
+//[문제 9] MenuItem 클래스를 만드세요. (name, price, isSignature 멤버 변수) *멤버변수의 타입은 적절하게 선택하시오.
+//        1. 세 멤버 변수를 모두 초기화하는 생성자를 만드세요.
+//        2. main 함수에서 이 생성자를 사용하여 "김치찌개", 8000, true 정보를 가진 객체를 생성하고,
+//        isSignature가 true인지 확인한 후 "[대표메뉴] 김치찌개 : 8000원" 형식으로 출력하세요.
+        // "김치찌개", 8000, true 정보를 가진 객체를 생성
+        MenuItem menuItem = new MenuItem( "김치찌개", 8000, true );
+        // true인지 확인
+        if( menuItem.isSignature == true ){
+            System.out.println( "[대표메뉴] " + menuItem.name +  " : " + menuItem.price );
+        }
+        // 출력
+
 //
-//            [문제 10] UserProfile 클래스를 만드세요. (name, age, mbti 멤버 변수) *멤버변수의 타입은 적절하게 선택하시오.
-//            1. 세 멤버 변수를 모두 초기화하는 생성자를 만드세요.
-//2. Scanner를 사용하여 사용자로부터 이름, 나이, MBTI를 입력받으세요.
-//3. 입력받은 값들을 사용하여 UserProfile 객체를 생성하고, 저장된 모든 정보를 출력하세요.
+//[문제 10] UserProfile 클래스를 만드세요. (name, age, mbti 멤버 변수) *멤버변수의 타입은 적절하게 선택하시오.
+//         1. 세 멤버 변수를 모두 초기화하는 생성자를 만드세요.
+//         2. Scanner를 사용하여 사용자로부터 이름, 나이, MBTI를 입력받으세요.
+//         3. 입력받은 값들을 사용하여 UserProfile 객체를 생성하고, 저장된 모든 정보를 출력하세요.
+
+        //이름, 나이, MBTI를 입력
+        Scanner scan = new Scanner( System.in );
+        System.out.print( "이름 : " );
+        String name = scan.next();
+        System.out.print( "나이 : " );
+        int age = scan.nextInt();
+        System.out.print( "MBTI : ");
+        String mbti = scan.next();
+        //UserProfile 객체를 생성
+        UserProfile userProfile = new UserProfile( name , age , mbti );
+        System.out.printf( "%s,%d,%s \n" , userProfile.name , userProfile.age , userProfile.mbti);
+        //모든 정보를 출력
+
+
 
     } // class end
 
