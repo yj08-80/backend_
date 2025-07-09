@@ -86,39 +86,39 @@ public class 실습6 { // class start
 //        Scanner를 이용해 사용자로부터 구매할 상품명과 수량을 입력받아, 재고가 충분하면 "구매 완료!"를 출력하고 재고를 차감하세요.
 //        재고가 부족하면 "재고가 부족합니다."를, 없는 상품이면 "없는 제품명입니다."를 출력합니다.
 //        선언 코드:
-        String[] products = {"볼펜", "노트", "지우개"};
-        int[] stock = {10, 5, 20};
-        // 상품명과 수량 입력받기
-        Scanner scan = new Scanner( System.in );
-        System.out.print( "상품명 : " );
-        String pname = scan.next();
-        System.out.print( "수량 : " );
-        int pnum = scan.nextInt();
-        int check = 0; // 0 : 없는 제품 , 1:구매완료 , 2:재고부족
-        // 배열 순회
-        for( int i = 0 ; i <= products.length-1 ; i++ ) {
-            String product = products[i];
-            int st = stock[i];
-            // 재고가 충분하면 "구매 완료!"를 출력하고 재고를 차감
-            if (product.equals(pname)) {
-                if (st >= pnum) {
-                    check = 1;
-                    st -= pnum;
-                    break;
-                }else{
-                    check = 2;
-                    break;
-                }
-            }
-            //재고가 부족하면 "재고가 부족합니다."를, 없는 상품이면 "없는 제품명입니다."
-        }
-        if( check == 0){
-            System.out.println( "없는 제품명입니다." );
-        }else if( check == 1 ){
-            System.out.println( "구매 완료!" );
-        }else if( check == 2 ){
-            System.out.println( "재고가 부족합니다." );
-        }
+//        String[] products = {"볼펜", "노트", "지우개"};
+//        int[] stock = {10, 5, 20};
+//        // 상품명과 수량 입력받기
+//        Scanner scan = new Scanner( System.in );
+//        System.out.print( "상품명 : " );
+//        String pname = scan.next();
+//        System.out.print( "수량 : " );
+//        int pnum = scan.nextInt();
+//        int check = 0; // 0 : 없는 제품 , 1:구매완료 , 2:재고부족
+//        // 배열 순회
+//        for( int i = 0 ; i <= products.length-1 ; i++ ) {
+//            String product = products[i];
+//            int st = stock[i];
+//            // 재고가 충분하면 "구매 완료!"를 출력하고 재고를 차감
+//            if (product.equals(pname)) {
+//                if (st >= pnum) {
+//                    check = 1;
+//                    st -= pnum;
+//                    break;
+//                }else{
+//                    check = 2;
+//                    break;
+//                }
+//            }
+//            //재고가 부족하면 "재고가 부족합니다."를, 없는 상품이면 "없는 제품명입니다."
+//        }
+//        if( check == 0){
+//            System.out.println( "없는 제품명입니다." );
+//        }else if( check == 1 ){
+//            System.out.println( "구매 완료!" );
+//        }else if( check == 2 ){
+//            System.out.println( "재고가 부족합니다." );
+//        }
 //
 //[문제 9] 주어진 영화 이름과 평점 배열을 이용하여, 각 영화의 평점을 별(★, ☆)로 시각화하여 출력하는 프로그램을 작성하시오.
 //                요구 조건: 각 영화의 평점(10점 만점)만큼 꽉 찬 별(★)을, 나머지 점수만큼 빈 별(☆)을 출력합니다.
@@ -141,11 +141,14 @@ public class 실습6 { // class start
         for( int i = 0 ; i <= movieNames.length-1 ; i++ ){
             // 영화 이름 출력
             String movieName = movieNames[i];
-            System.out.println( movieName );
+            System.out.print( movieName );
             for( int star = 1 ; star <= 10 ; star++ ){
-
+                if( star <= movieRatings[i] ){  System.out.print("★");}
+                else{ System.out.print("☆"); }
             }
+            System.out.println();
         }
+
 //
 //[문제 10] 차량별 주차 시간 데이터가 주어졌을 때, 아래의 요금 규정에 따라 각 차량이 지불해야 할 최종 주차 요금을 계산하여 출력하시오.
 //        요금 규정:
@@ -160,5 +163,15 @@ public class 실습6 { // class start
 //        142가7415: 30분 주차, 최종 요금: 1000원
 //        888호8888: 140분 주차, 최종 요금: 6500원
 //        931나8234: 420분 주차, 최종 요금: 20000원
+        String[] carNumbers = {"210어7125", "142가7415", "888호8888", "931나8234"};
+        int[] usageMinutes = {65, 30, 140, 420};
+        // 배열 순회
+        for( int i = 0 ; i <= carNumbers.length-1 ; i++ ){
+            System.out.println( carNumbers[i] + ":" + usageMinutes[i] + "분 주차," );
+            if( usageMinutes[i] > 30 ){
+                int money = (usageMinutes[i] - 30)/10*500 + 1000;
+                System.out.print( "최종 요금:" + money + "원" );
+            }
+        }
     } // main end
 } // class end
