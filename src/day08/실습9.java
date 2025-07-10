@@ -58,6 +58,9 @@ public class 실습9 { // class start
 //        3. 매개변수가 있는 생성자: name과 price를 매개변수로 받아 초기화
 //        4. main 함수에서 기본 생성자로 객체 하나, 매개변수가 있는 생성자로
 //        ("콜라", 2000) 정보를 가진 객체 하나를 각각 생성하고, 두 객체의 정보를 모두 출력하세요.
+
+        // 변수란 ? 하나의 자료를 저장(재사용) 할 수 있는 메모리공간
+        // 자바 변수 규칙 : 타입 변수명 = 자료
         Goods goods = new Goods();
         Goods goods1 = new Goods("콜라", 2000);
         System.out.printf( "%s,%d \n" , goods.name , goods.price );
