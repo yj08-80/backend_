@@ -11,6 +11,11 @@ import java.util.Scanner;
 public class WaitingView { // class start
 
     // 싱글톤 만들기
+    //    private 클래스명(){}
+    //    private static final 클래스명 instance = new 클래스명();
+    //    public static 클래스명 getInstance(){
+    //        return instance;
+    //    }
     private WaitingView(){}
     private static final WaitingView view = new WaitingView();
     public static WaitingView getInstance(){
@@ -42,7 +47,7 @@ public class WaitingView { // class start
         System.out.print( "전화번호 : " );
         String phone = scan.next();
         System.out.print( "인원수 : " );
-        String count = scan.next();
+        int count = scan.nextInt();
         boolean result = waitingController.waitingWrite( phone , count );
         if( result ){
             System.out.println( "[안내] 대기 등록이 완료되었습니다." );
@@ -58,7 +63,7 @@ public class WaitingView { // class start
         for( int i = 0 ; i <= result.length-1 ; i++ ){
             WaitingDto waitingDto = result[i];
             if( waitingDto != null ){
-                System.out.println( "전화번호 : " + waitingDto.getPhone() );
+                System.out.println( (i+1) + ".연락처 : " + waitingDto.getPhone() );
                 System.out.println( "인원수 : " + waitingDto.getCount() );
                 System.out.println( "------------------------------------" );
             }

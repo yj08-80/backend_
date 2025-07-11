@@ -9,6 +9,11 @@ import java.util.Scanner;
 public class BoardView {
 
     // 싱글톤 만들기
+    //    private 클래스명(){}
+    //    private static final 클래스명 instance = new 클래스명();
+    //    public static 클래스명 getInstance(){
+    //        return instance;
+    //    }
     private BoardView(){} // 1단계
     private static final BoardView view = new BoardView(); // 2단계
     public static BoardView getInstance() { // 3단계

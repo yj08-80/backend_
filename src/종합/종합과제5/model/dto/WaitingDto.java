@@ -3,11 +3,11 @@ package 종합.종합과제5.model.dto;
 public class WaitingDto { // class start
     // 1. 멤버변수 - private
     private String phone;
-    private String count;
+    private int count;
 
     // 2. 생성자 - 기본생성자, 매개변수가 있는 생성자
     public WaitingDto(){}
-    public WaitingDto(String phone, String count) {
+    public WaitingDto(String phone, int count) {
         this.phone = phone;
         this.count = count;
     }
@@ -19,10 +19,10 @@ public class WaitingDto { // class start
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public String getCount() {
+    public int getCount() {
         return count;
     }
-    public void setCount(String count) {
+    public void setCount(int count) {
         this.count = count;
     }
 
