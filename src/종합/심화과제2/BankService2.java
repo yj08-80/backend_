@@ -1,6 +1,6 @@
 package 종합.심화과제2;
 
-public class BackService2 { // class start
+public class BankService2 { // class start
 
     /*
 
