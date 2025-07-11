@@ -1,7 +1,10 @@
 package 종합.심화과제2;
 
-public class BankService2 { // class start
+public class AppStart { // class start
 
+    public static void main(String[] args) { // class start
+
+    } // class end
     /*
 
 [JAVA] 심화과제2 : BankService 아래 실행예시를 참고하여 코드를 구현하시오. *미제출
