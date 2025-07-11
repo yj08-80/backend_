@@ -84,6 +84,7 @@ public class 실습10 { // class start
         // 클래스 이름으로 직접 접근하여 모든 설정 값을 출력
         System.out.println( GameConfig.MAX_LEVEL );
         System.out.println( GameConfig.MAX_HP );
+        System.out.println( GameConfig.GAME_TITLE );
 
 
     } // main end
