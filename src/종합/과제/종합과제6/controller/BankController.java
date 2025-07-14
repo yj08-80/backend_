@@ -19,13 +19,17 @@ public class BankController { // class start
 
     // 등록 기능 구현
     public boolean addBank( String phone , int count ){
+        // boolean 기본값 false
         boolean result = false;
+        // DAO에 등록 요청 → 성공 여부 반환
         result = bankDao.addBank( phone , count );
+        // return bankDao.addBank(phone, count); 도 가능
         return result;
     }
 
     // 전체조회 기능 구현
     public ArrayList<BankDto> getBankList(){
+        // bankDao에서 리스트 전체 받기
         return  bankDao.getBankList();
     }
 } // class end

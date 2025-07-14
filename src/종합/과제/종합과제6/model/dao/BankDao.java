@@ -19,9 +19,13 @@ public class BankDao { // class start
 
     // 등록 기능 구현
     public boolean addBank( String phone , int count ){
+        // result 기본 값 false
         boolean result = false;
+        // dto 객체 생성
         BankDto bankDto = new BankDto( phone , count );
+        // ArrayList(DB 역할)에 추가
         bankDB.add( bankDto );
+        // 성공하면 true
         result = true;
         return  result;
     }
