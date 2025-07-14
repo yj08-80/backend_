@@ -1,13 +1,13 @@
 package 종합.과제.종합과제6.model.dto;
 
-public class BankDto { // class start
+public class WaitDto { // class start
 
     // 멤버변수
-        String phone;
-        int count;
+    String phone;
+    int count;
     // 생성자
-    public BankDto(){}
-    public BankDto(String phone, int count) {
+    public WaitDto(){}
+    public WaitDto(String phone, int count) {
         this.phone = phone;
         this.count = count;
     }
@@ -31,7 +31,7 @@ public class BankDto { // class start
 
     @Override
     public String toString() {
-        return "BankDto{" +
+        return "WaitDto{" +
                 "phone='" + phone + '\'' +
                 ", count=" + count +
                 '}';
