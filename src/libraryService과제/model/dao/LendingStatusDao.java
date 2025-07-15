@@ -1,6 +1,8 @@
 package libraryService과제.model.dao;
 
-import 종합.종합예제8.model.dao.BoardDao;
+import libraryService과제.model.dto.LendingStatusDto;
+
+import java.util.ArrayList;
 
 public class LendingStatusDao { // class start
     private LendingStatusDao(){}
@@ -8,4 +10,6 @@ public class LendingStatusDao { // class start
     public static LendingStatusDao getInstance(){
         return lendingStatusDao;
     }
+
+    private ArrayList<LendingStatusDto> lendingStatusDB = new ArrayList<>();
 } // class end

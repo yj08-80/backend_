@@ -1,5 +1,9 @@
 package libraryService과제.model.dao;
 
+import libraryService과제.model.dto.BookListDto;
+
+import java.util.ArrayList;
+
 public class BookInfoDao { // class start
 
     private BookInfoDao(){}
@@ -8,4 +12,6 @@ public class BookInfoDao { // class start
         return bookInfodao;
     }
 
-} // class end
+    private ArrayList<BookListDto> booklistDB = new ArrayList<>();
+
+}
