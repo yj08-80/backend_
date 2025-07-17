@@ -9,15 +9,26 @@
         1. show
             1) show databases; : DB 서버내 전체 데이터베이스 목록 조회
             2) show variables like 'datadir' :  DB서버내 LOCAL PATH 조회
+            3) show tables; : 활성화 중인 데이터베이스내 모든 테이블 조회
         2. use
             1) use 데이터베이스명; : DB 서버내 지정한 데이터베이스 활성화(사용)
     [1] 데이터베이스 정의 : DDL
         1. create
             1) create database 데이터베이스명; : 지정한 데이터베이스 생성
+            2) create table 테이블명(
+                속성명1 타입 제약조건
+                속셩명2 타입 제약조건
+                )
         2. drop
             1) drop database 데이터베이스명; : 지정한 데이터베이스 삭제
             2) drop database if exists 데이터베이스명; : 만약에 지정한 데이터베이스 존재하면 삭제
-
+            3) drop table 테이블명;
+            4) drop table if exists 테이블명; : 만약에 지정한 테이블이 존재하면 삭제
+    [2] 데이터베이스 조작어 : DML, 키워드/문법에 대한 대소문자 구분 없다
+        1. INSERT
+            1) 특정 속성에 값 대입하여 레코드 추가
+                insert into 테이블명( 속성명1 , 속성명2 ) vlaues( 값1 , 값2 )
+            2) 모든 속성에 값 대입하여 레코드 추가, 속성명
 
 [ 데이터타입 ] : 테이블 내 속성들이 갖는/저장하는 자료들의 분류/타입
     1. 정수
@@ -62,13 +73,17 @@
         -> 절대적으로 중복이 없는 고유값
         특징) not null, unique 포함
         선언) constraint primary key(필드명)
-    6. foreign key : 참조/외래키(FK) : 다른 테이블의 기본키를 참조하는 키
-        -> 수강신청학번, 출근한직원의사번, 글작성자회원번호
-        특징) FK필드는 null값과 중복이 가능, PK값 참조
-        선언) constraint foreing key( FK필드명 ) reference 참조할테이블명( 참조할필드명 );
-        주의할점)
-            1. PK속성타입과 FK속성타입은 일치한다
-            2.
+    6. foreign key      : 참조/외래키(FK) , 다른 테이블의 기본키(PK)를 참조하는 키
+            -> 수강신청한학번, 출근한직원사번 , 글작성자회원번호 등등
+            특징) FK필드는 NULL 과 중복 이 가능하다. PK값 참조한다.
+            선언) constraint foreign key( FK필드명 ) references 참조할테이블명( PK필드명 );
+            주의할점)
+                1. FK속성타입 과 PK속성타입 일치 한다.
+                2. 관례적으로 pk속성명 과 fk속성명은 동일하게 한다.
+
+[ 생성된 테이블 다이어그램 확인 ] : 여럿 테이블 간의 관계 확인
+    #  workbench 상단메뉴 -> [database] -> [reverse engineer] -> stored conntion : local(선택) -> [next]
+    # -> 비밀번호입력 [next] -> 데이터베이스 선택 -> [next] -> [finish]
 
 
 

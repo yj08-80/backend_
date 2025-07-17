@@ -1,6 +1,4 @@
-package libraryService과제.model.dto;
-
-import 종합.종합예제8.Controller.BoardController;
+package project.model.dto;
 
 public class BookInfoDto { // class start
 

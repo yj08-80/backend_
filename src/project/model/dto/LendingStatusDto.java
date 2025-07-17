@@ -1,4 +1,7 @@
-package libraryService과제.model.dto;
+package project.model.dto;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class LendingStatusDto { // class start
 
@@ -15,9 +18,9 @@ public class LendingStatusDto { // class start
     LendingStatusDto(){}
 
     // 대출 시작일 생성자
-    public LendingStatusDto(String loanDate, int loanLog, int bookLog, int memberNo) {
-        this.loanDate = loanDate;
-        this.loanLog = loanLog;
+    public LendingStatusDto( int bookLog, int memberNo ) {
+        DateTimeFormatter formatter =DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        loanDate = formatter.format( LocalDateTime.now() ) ;
         this.bookLog = bookLog;
         this.memberNo = memberNo;
     }

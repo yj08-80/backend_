@@ -1,4 +1,4 @@
-package libraryService과제.model.dto;
+package project.model.dto;
 
 public class BookListDto { // class start
 
