@@ -120,12 +120,31 @@ public class 실습13 { // class start
         greeting.welcome();
 //
 //[문제 9] 디폴트 메소드 (Default Method)
-//1.Device 인터페이스에, turnOn(), turnOff() 추상 메소드와 함께, public default void setMute(boolean mute) 디폴트 메소드를 추가하세요. 디폴트 메소드는 "무음 처리합니다."를 출력하도록 구현합니다.
+//1.Device 인터페이스에, turnOn(), turnOff() 추상 메소드와 함께,
+// public default void setMute(boolean mute) 디폴트 메소드를 추가하세요.
+// 디폴트 메소드는 "무음 처리합니다."를 출력하도록 구현합니다.
 //2.Television 클래스가 Device를 구현하도록 하되, turnOn(), turnOff()만 오버라이딩하세요.
-//3.main 함수에서 Television 객체를 생성하고, turnOn(), turnOff()와 함께 디폴트 메소드인 setMute()도 호출되는 것을 확인하세요
+//3.main 함수에서 Television 객체를 생성하고,
+// turnOn(), turnOff()와 함께 디폴트 메소드인 setMute()도 호출되는 것을 확인하세요
+        Television television = new Television();
+        television.turnOn(); // 켭니다
+        television.turnOff(); // 끕니다
+        television.setMute(true); // 무음 처리합니다.
+        television.setMute(false); // 무음 처리 해제합니다.
 //
 //[문제 10] 정적 메소드 (Static Method)
-//1. Calculator 인터페이스를 만들고, 두 정수의 합을 반환하는 plus(int x, int y) 정적 메소드를 정의하세요.
-//2. main 함수에서 Calculator 인터페이스를 구현하는 클래스나 객체를 만들지 않고, Calculator.plus(10, 20)과 같이 인터페이스 이름으로 직접 정적 메소드를 호출하여 결과를 출력하세요.
+//1. Calculator 인터페이스를 만들고,
+// 두 정수의 합을 반환하는 plus(int x, int y) 정적 메소드를 정의하세요.
+//2. main 함수에서 Calculator 인터페이스를 구현하는 클래스나 객체를 만들지 않고,
+// Calculator.plus(10, 20)과 같이 인터페이스 이름으로 직접 정적 메소드를 호출하여 결과를 출력하세요.
+        interface Calculator{
+            static int plus(int x, int y) {
+                int z = x + y;
+                return z;
+            }
+        }
+
+        int result = Calculator.plus( 10, 20 );
+        System.out.println( result );
     }
 } // class end
