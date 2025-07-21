@@ -1,4 +1,4 @@
-package day15;
+package day14;
 
 public class Person { // class start
     String name;

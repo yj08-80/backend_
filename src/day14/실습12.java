@@ -1,4 +1,4 @@
-package day15;
+package day14;
 
 public class 실습12 { // class start
     public static void main(String[] args) {
@@ -94,7 +94,7 @@ public class 실습12 { // class start
         Sword sword = new Sword();
         Gun gun = new Gun();
 
-        Character character = new Character();
+        day14.Character character = new day14.Character();
         character.use( sword );
         character.use( gun );
 
@@ -125,7 +125,7 @@ public class 실습12 { // class start
     // instanceof 연산자로 확인하고 결과를 출력하세요.
         Laptop laptop = new Laptop();
         System.out.println( laptop instanceof Electronic ); // true
-        System.out.println( laptop instanceof  Device ); // true
+        System.out.println( laptop instanceof Device); // true
     }
 
 

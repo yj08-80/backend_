@@ -1,6 +1,4 @@
-package day15;
-
-import java.util.concurrent.CountDownLatch;
+package day14;
 
 public class Machine { // class start
     // 생성자
