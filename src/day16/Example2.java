@@ -1,4 +1,4 @@
-package Day16;
+package day16;
 
 public class Example2 { // class start
 

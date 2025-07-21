@@ -1,6 +1,5 @@
-package Day16;
+package day16;
 
-import java.io.LineNumberReader;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
