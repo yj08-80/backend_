@@ -43,7 +43,7 @@ public class Example2 { // class start
             // - 데이터베이스 서버 주소 : jdbc:mysql://ip주소:port번호
             String db_url = "jdbc:mysql://localhost:3306/mydb0722"; // 데이터베이스 서버 주소
             String db_user = "root"; // 데이터베이스 계정명
-            String db_password = "dbwls6724"; // 데이터베이스 비밀번호
+            String db_password = "11111"; // 데이터베이스 비밀번호
             Connection connection = DriverManager.getConnection( db_url , db_user , db_password );
             System.out.println( "[데이터베이스 연동 성공]");
             // -----자바에서 insert 문법 사용해보기-----//
