@@ -9,6 +9,11 @@ import java.util.Scanner;
 
 public class 실습15 { // class start
     public static void main(String[] args) { // main start
+
+
+        // * 파일처리 목적 : (저장) 자바 외 저장소로 영구저장 가능하다
+
+
 //[JAVA] 실습15 : 파일 처리 (개정판)
 //[ 문제 ] 아래 파일 처리 관련 문제를 해결하시오.
 //[ 제출방법 ] 코드가 작성된 파일이 위치한 깃허브 상세 주소를 제출하시오.
@@ -50,7 +55,7 @@ public class 실습15 { // class start
             String visit = "src/visit_log.txt";
             FileOutputStream fileOutputStream1 = new FileOutputStream( visit );
             byte[] outByte = str.getBytes();
-            fileOutputStream1.write(outByte );
+            fileOutputStream1.write( outByte );
 
             //[문제 5] 연락처를 CSV 형식으로 파일에 저장하기
             //1. Scanner를 사용하여 사용자로부터 이름, 전화번호, 사는 도시를 순서대로 입력받으세요.
