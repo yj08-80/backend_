@@ -1,7 +1,5 @@
 package 종합.종합예제9;
 
-import 종합.종합예제9.controller.BoardController;
-import 종합.종합예제9.model.dto.BoardDto;
 import 종합.종합예제9.view.BoardView;
 
 import java.util.ArrayList;
